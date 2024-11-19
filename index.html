@@ -40,7 +40,7 @@
 		<h1 class="masthead">Time of Day</h1>
 	</header>
     <main>
-	 <header><h3>A JavaScript Project by YOUR NAME HERE</h3></header>
+	 <header><h3>A JavaScript Project by Temesgen Tesfamichael</h3></header>
 	 <h3 id="my-greeting">Greeting Goes Here</h3>
 	    <p>This page uses JavaScript to determine the current hour, and present a different image, custom message, and color based on each of the following times of day:</p>
 
@@ -49,11 +49,13 @@
 				Evening (6pm to 11pm)
 				Night (11pm to 5am)
 			</p>
+	<h3 id="my-dayName">The name of the day goes here</h3>
+	<p>This page indicates the correct day of the week as well</p>
 			
 	  <img src="http://dummyimage.com/300x400" alt="Time of Day Image" class="flexible" id="my-pic">
      <footer>
       <p><small>&copy; 2022 by 
-          YOUR NAME HERE, All Rights Reserved ~ 
+          Temesgen Tesfamichael, All Rights Reserved ~ 
           <a id="html-checker" href="#" target="_blank">Check HTML</a> ~ 
           <a id="css-checker" href="#" target="_blank">Check CSS</a></small>
      </p>
@@ -73,6 +75,11 @@
 
 	myDate = new Date();
 	myHour = myDate.getHours();
+	myDay = myDate.getDay();
+
+	days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+	today = days[myDay];
+	dayName = "Today is " + today;
 
 
 	if(myHour >= 5 && myHour <= 12){
@@ -98,8 +105,10 @@
 	myPic = "images/" + myPic;
 
 	document.getElementById("my-greeting").innerHTML = mySentence;
+	document.getElementById("my-dayName").innerHTML = dayName;
 	document.body.style.backgroundColor = myColor;
 	document.getElementById("my-pic").src = myPic;
+	
 
 
 
